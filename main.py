@@ -21,7 +21,7 @@ app.add_middleware(
 )
 
 @app.get("/")
-def home():
+def index():
     return {"Pythainlp Version": pythainlp.__version__}
 
 
