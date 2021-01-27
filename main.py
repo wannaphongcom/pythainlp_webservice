@@ -20,6 +20,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 @app.get("/")
 def index():
     return {"Pythainlp Version": pythainlp.__version__}
