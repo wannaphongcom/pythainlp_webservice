@@ -2,3 +2,5 @@ fastapi
 pythainlp
 uvicorn
 pytest
+gensim
+numpy
