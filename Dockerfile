@@ -1,4 +1,4 @@
-FROM python:alpine3.6
+FROM python:3.7
 MAINTAINER Wannaphong Phatthiyaphaibun <wannaphong@kkumail.com>
 WORKDIR /usr/src/app
 EXPOSE 8000
@@ -8,4 +8,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD ["python", "app.py"]
+CMD ["python", "main.py"]
