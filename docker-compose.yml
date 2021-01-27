@@ -1,0 +1,8 @@
+version: "1"
+services:
+  api:
+    build: .
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "8000:8000"
