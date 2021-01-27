@@ -2,7 +2,22 @@
 from fastapi import Depends, FastAPI, Header, HTTPException
 from routers import tag, tokenize
 
-app = FastAPI()
+DESC_TEXT = "Pythainlp API"
+
+app = FastAPI(
+    title='Pythainlp API',
+    description=DESC_TEXT,
+    version='0.1',
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 
 @app.get("/")
