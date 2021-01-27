@@ -2,6 +2,7 @@
 from fastapi import Depends, FastAPI, Header, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from routers import tag, tokenize
+import pythainlp
 
 DESC_TEXT = "Pythainlp API"
 
@@ -20,8 +21,8 @@ app.add_middleware(
 )
 
 @app.get("/")
-def hello():
-    return {"Hello": "World"}
+def home():
+    return {"Pythainlp Version": pythainlp.__version__}
 
 
 app.include_router(tag.router, prefix="/tag", tags=["Tag"])
