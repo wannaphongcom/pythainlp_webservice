@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from fastapi import Depends, FastAPI, Header, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from routers import tag, tokenize
 
 DESC_TEXT = "Pythainlp API"
@@ -18,12 +19,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
-
 @app.get("/")
 def hello():
     return {"Hello": "World"}
 
 
-app.include_router(tag.router)
-app.include_router(tokenize.router)
+app.include_router(tag.router, prefix="/tag", tags=["Tag"])
+app.include_router(tokenize.router, prefix="/tokenize", tags=["Tokenize"])
