@@ -41,21 +41,21 @@ class SubwordTokenizeResponse(BaseModel):
     subwords: List[str] = []
 
 
-@router.get('/sent_tokenize', response_model=SentTokenizeResponse)
+@router.get('/sent', response_model=SentTokenizeResponse)
 def sent_tokenize(q: str, engine: SentTokenizeEngine = "whitespace"):
     return {"sents": tokenize.sent_tokenize(q, engine=engine)}
 
 
-@router.get('/word_tokenize', response_model=WordTokenizeResponse)
+@router.get('/word', response_model=WordTokenizeResponse)
 def word_tokenize(q: str, engine: WordTokenizeEngine = "newmm"):
     return {"words": tokenize.word_tokenize(q, engine=engine)}
 
 
-@router.get('/syllable_tokenize', response_model=SyllableTokenizeResponse)
+@router.get('/syllable', response_model=SyllableTokenizeResponse)
 def syllable_tokenize(q: str):
     return {"syllables": tokenize.syllable_tokenize(q)}
 
 
-@router.get('/subword_tokenize', response_model=SubwordTokenizeResponse)
+@router.get('/subword', response_model=SubwordTokenizeResponse)
 def subword_tokenize(q: str, engine: SubwordTokenizeEngine = "tcc"):
     return {"subwords": tokenize.subword_tokenize(q, engine=engine)}
