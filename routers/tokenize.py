@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from fastapi import APIRouter
 from pythainlp import tokenize
 from enum import Enum

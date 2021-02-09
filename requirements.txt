@@ -1,5 +1,5 @@
 fastapi
-pythainlp
+pythainlp==2.1.4
 uvicorn
 pytest
 gensim
