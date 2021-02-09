@@ -1,4 +1,4 @@
-FROM python:3.6
+FROM python:3.7
 MAINTAINER Wannaphong Phatthiyaphaibun <wannaphong@kkumail.com>
 WORKDIR /app
 EXPOSE 8000
