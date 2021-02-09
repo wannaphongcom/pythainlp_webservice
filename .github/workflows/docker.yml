@@ -15,7 +15,7 @@ on:
 
 env:
   # TODO: Change variable to your image's name.
-  IMAGE_NAME: pythainlp-webdemo
+  IMAGE_NAME: pythainlp-api
 
 jobs:
   # Run tests.
